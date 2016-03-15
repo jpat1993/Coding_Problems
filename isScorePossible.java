@@ -3,7 +3,6 @@ import java.util.*;
 public class isScorePossible{
 
      public static void main(String []args){
-        System.out.println("Hello World");
         int[] test = {3,7};
         System.out.println(isScorePossible(test, 10));
      }

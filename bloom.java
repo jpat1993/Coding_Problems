@@ -2,7 +2,7 @@
 import java.util.*;
 import java.lang.Object;
 
-class bloom {
+public class bloom extends BloomFilter<E> {
     public static void main (String[] args) {
         int[] a = {2,3,4,5};
         int[] b = {7,5,8,4};
@@ -39,12 +39,12 @@ class bloom {
     }
 
     public static ArrayList<Integer> findDup2 (int[] a, int[] b) {
-        BloomFilter<Integer> map = new BloomFilter<Integer>();
+        BloomFilter<Integer> map = new BloomFilter<Integer>(10,40);
         ArrayList<Integer> out = new ArrayList<Integer>();
         for (int i : a)
-            map.put(i);
+            map.add(i);
         for (int i : b) {
-            if (map.mightContain(i)) {
+            if (map.contains(i)) {
                 out.add(i);
             }
                 // found duplicate!   
